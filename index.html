@@ -21,6 +21,11 @@
   <!-- Custom CSS -->
   <link href="css/stylish-portfolio.min.css" rel="stylesheet">
 
+  <!-- Slideshow CSS -->
+  <link href="css/slideshow.css" rel="stylesheet">
+
+
+
 </head>
 
 <body id="page-top">
@@ -127,23 +132,20 @@
   </section>
 
   <!-- Slideshow container -->
-  <section class="content-section" id="slideshow"></section>
 <div class="slideshow-container">
 
   <!-- Full-width images with number and caption text -->
+
   <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img src="Protesta.jpg" style="width:100%">
+    <div class="numbertext">1 / 2</div>
+    <img src="img/radio.jpg" style="width:100%">
+    <div class="text">Radio</div>
   </div>
 
   <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="radio.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="ventalibro.jpg" style="width:100%">
+    <div class="numbertext">2 / 2</div>
+    <img src="img/ventalibro.jpg" style="width:100%">
+    <div class="text">Lanzamiento libro</div>
   </div>
 
   <!-- Next and previous buttons -->
@@ -156,7 +158,6 @@
 <div style="text-align:center">
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
 </div>
 
 
@@ -305,10 +306,13 @@
             <i class="icon-social-facebook"></i>
           </a>
         </li>
-        <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white mr-3" href="50235170394">
-            <i class="icon-phone"></i>
+          <a href="50235170394">
+            <p align="left"></p>(+502) 3517 0394</p>
           </a>
+          <br/>
+          <a href="50235170394">
+              <p align="left"></p>(+502) 3517 0394</p>
+            </a>
         </li>
 
           </a>
@@ -333,6 +337,25 @@
   <!-- Custom scripts for this template -->
   <script src="js/stylish-portfolio.min.js"></script>
 
+  <!-- Custom slideshow -->
+  <script src="js/slideshow.js"></script>
+  <!-- Custom slideshow -->
+  <script>
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1} 
+      slides[slideIndex-1].style.display = "block"; 
+      setTimeout(showSlides, 2000); // Change image every 9 seconds
+    }
+  </script>
 </body>
 
 </html>
